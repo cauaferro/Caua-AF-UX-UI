@@ -53,32 +53,4 @@ Utilize o material apresentado durante a aula;
 
 Em caso de dúvidas entre em contato no e-mail: daniel.ohata@facens.br.
 
---ETAPA 4 --
 
-Documentação
-
-Ainda utilizando o código anterior devidamente postado no repositório, realize as seguintes atividades:
-
-Crie uma BRANCH com o nome ETAPA 4;
-
-Estudo o código passado e gere uma documentação para o mesmo;
-
-Lembrando, para comentário de uma linha utilizamos o comando //;
-
-Para comentários de múltiplas linhas utilizamos /* <código-fonte> */;
-
-Para documentação de classes, métodos e variáveis utilizamos /** <código-fonte> **/
-
-Para está etapa deve ser gerado um JAVADOC do projeto;
-
-Monte um README.MD explicando sobre o que está sendo realizado no repositório;
-
-Está atividade pode ser feita com os colegas de classe, mas a entrega é individual;
-
-Sua entrega será para próxima semana até o início da aula e irá fazer parte da nota de AC2.
-
-O exercício e sua entrega é individual;
-
-Utilize o tempo disponibilizado durante as aulas para tirar suas dúvidas e realizar a atividade;
-
-Caso precise de auxílio envie e-mail para daniel.ohata@facens.br.
