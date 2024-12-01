@@ -1,56 +1,24 @@
-# Caua-AF-UX-UI
---ETAPA 1--
+Entrada de Dados Vulnerável a Ataques:
+O método verificarUsuarioinsere diretamente os valores de logine senhana consulta SQL. Essa abordagem permite que usuários mal-intencionados executem comandos SQL indesejados, comprometendo a integridade do banco de dados.
 
-Teste de Caixa Branca (Estático)
+Ausência de Registro de Exceções:
+Os blocos catchnão contêm nenhum tratamento ou registro de erros, deixando problemas ocultos durante a execução do programa. Isso dificulta a identificação de falhas e o aprimoramento do sistema.
 
-Aponte os erros que podem conter no código;
+Falta de Liberação de Recursos:
+Recursos como Connection, Statemente ResultSetnão são devidamente fechados após o uso. Essa negligência pode levar a vazamentos, gerando consumo excessivo de memória e flexibilidade de desempenho ao longo do tempo.
 
-Crie um projeto e digite o código;
+Credenciais Sensíveis no Código:
+As informações de autenticação do banco de dados (por exemplo, user=roote password=1234) estão inseridas diretamente no código-fonte. Essa prática expõe dados críticos, tornando-os suscetíveis a acessos não autorizados.
 
-Envie o mesmo para um repositório remoto;
+Possibilidade de Erros com Conexões Nulas:
+Caso a conexão com o banco de dados ( conn) não seja criada corretamente, chamadas como conn.createStatement()ocorrência falha, resultando em erros inesperados durante a execução.
 
-Dentro do seu repositório, crie um Readme explicando os erros encontrados;
+Mistura de Funções em uma Classe Única:
+Uma classe Useracumula tanto a responsabilidade pela conexão com o banco de dados quanto pela lógica de negócios. Isso viola o princípio de separação de responsabilidades, tornando o código mais difícil de manter e expandir.
 
---ETAPA 2--
+Uso de Variáveis ​​Compartilhadas:
+O uso de variáveis ​​globais, como nome, pode causar comportamentos inesperados em um ambiente com múltiplos usuários, já que valores podem ser sobrescritos de forma indesejada.
 
-Utilize a mesma BRANCH recém-criada para está etapa;
-
-Após a identificação dos erros faça o preenchimento do formulário de TESTE ESTÁTICO;
-
-O formulário está no arquivo com formatação XLS e com o título PLANO DE TESTE;
-
-Verifique o conteúdo disponível na aula para preenchimento do arquivo;
-
-Insira o arquivo no repositório remoto criado.
-
---ETAPA 3--
-
-Critérios de Caixa Branca - (Grafo de Fluxo; Complexidade Ciclomática; Caminhos Básicos)
-
-Ainda utilizando o código anterior devidamente postado no repositório, realize as seguintes atividades:
-
-Crie uma BRANCH com o nome ETAPA 3;
-
-Observe o código e crie um grafo de fluxo;
-
-Número os pontos dentro do seu código;
-
-Lembre-se que existem pontos de entrada e saída de valores;
-
-Após a identificação dos nodos, interligue os pontos com as devidas arestas;
-
-Monte seu grafo de fluxo e insira no Readme do seu projeto;
-
-Faça o cálculo da complexidade ciclomática e adicione no Readme do repositório;
-
-Após identificar a quantidade de caminhos, monte cada uma das sequencias e acrescente no Readme do projeto.
-
-Está atividade pode ser feita com os colegas de classe, mas a entrega é individual;
-
-Sua entrega será para próxima semana até o início da aula e irá fazer parte da nota de AC2;
-
-Utilize o material apresentado durante a aula;
-
-Em caso de dúvidas entre em contato no e-mail: daniel.ohata@facens.br.
-
+Conexão Não Verificada:
+O código não confirma se a conexão com o banco de dados foi estabelecida com sucesso antes de executar operações. Isso pode levar a falhas evitáveis ​​caso a conexão não esteja ativa.
 
