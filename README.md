@@ -1,84 +1,58 @@
-# Caua-AF-UX-UI
---ETAPA 1--
+N1: Início do código
+public class User {
+    public Connection conectarBD() {
+        Connection conn = null;
 
-Teste de Caixa Branca (Estático)
+N2: Inicia a tentativa de conexão com o banco
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+        String url = "jdbc:mysql://127.0.0.1/teste?user=root&password=1234";
+        conn = DriverManager.getConnection(url);
+        
+N3: Exceção durante a conexão (se falhar)
+    } catch (Exception e) {
+    }
+    
+N4: Retorno da conexão com o banco
+    return conn;
+    
+N5: Início da verificação do usuário
+public boolean verificarUsuario(String login, String senha) {
+    String sql = "";
+    Connection conn = conectarBD();
+    
+N6: Execução da consulta SQL
+    // INSTRUÇÃO SQL
+    sql = "select nome from usuarios ";
+    sql += "where login = '" + login + "' ";
+    sql += "and senha = '" + senha + "';";
 
-Aponte os erros que podem conter no código;
+    try {
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(sql);
 
-Crie um projeto e digite o código;
+N7: Exceção durante a execução da consulta
+    } catch (Exception e) {        
+    }
 
-Envie o mesmo para um repositório remoto;
+N8: Verificação do resultado da consulta
+    if (rs.next()) {
+        result = true;
+        nome = rs.getString("nome");
+    }
 
-Dentro do seu repositório, crie um Readme explicando os erros encontrados;
+N9: Retorno final da função
+    return result;
+}
 
---ETAPA 2--
+Caminhos:
+Caminho 1 (C1): N1 → N2 → N4 → N5 → N6 → N8 → N9
+Caminho 2 (C2): N1 → N3 → N9
+Caminho 3 (C3): N1 → N2 → N4 → N5 → N7 → N9
 
-Utilize a mesma BRANCH recém-criada para está etapa;
+Complexidade Ciclomática:
+A complexidade ciclomática é calculada com a fórmula:
+V ( G )=9−8+2=3
+V(G) = 3
+Complexidade Ciclomática (V(G)) = 3
 
-Após a identificação dos erros faça o preenchimento do formulário de TESTE ESTÁTICO;
-
-O formulário está no arquivo com formatação XLS e com o título PLANO DE TESTE;
-
-Verifique o conteúdo disponível na aula para preenchimento do arquivo;
-
-Insira o arquivo no repositório remoto criado.
-
---ETAPA 3--
-
-Critérios de Caixa Branca - (Grafo de Fluxo; Complexidade Ciclomática; Caminhos Básicos)
-
-Ainda utilizando o código anterior devidamente postado no repositório, realize as seguintes atividades:
-
-Crie uma BRANCH com o nome ETAPA 3;
-
-Observe o código e crie um grafo de fluxo;
-
-Número os pontos dentro do seu código;
-
-Lembre-se que existem pontos de entrada e saída de valores;
-
-Após a identificação dos nodos, interligue os pontos com as devidas arestas;
-
-Monte seu grafo de fluxo e insira no Readme do seu projeto;
-
-Faça o cálculo da complexidade ciclomática e adicione no Readme do repositório;
-
-Após identificar a quantidade de caminhos, monte cada uma das sequencias e acrescente no Readme do projeto.
-
-Está atividade pode ser feita com os colegas de classe, mas a entrega é individual;
-
-Sua entrega será para próxima semana até o início da aula e irá fazer parte da nota de AC2;
-
-Utilize o material apresentado durante a aula;
-
-Em caso de dúvidas entre em contato no e-mail: daniel.ohata@facens.br.
-
---ETAPA 4 --
-
-Documentação
-
-Ainda utilizando o código anterior devidamente postado no repositório, realize as seguintes atividades:
-
-Crie uma BRANCH com o nome ETAPA 4;
-
-Estudo o código passado e gere uma documentação para o mesmo;
-
-Lembrando, para comentário de uma linha utilizamos o comando //;
-
-Para comentários de múltiplas linhas utilizamos /* <código-fonte> */;
-
-Para documentação de classes, métodos e variáveis utilizamos /** <código-fonte> **/
-
-Para está etapa deve ser gerado um JAVADOC do projeto;
-
-Monte um README.MD explicando sobre o que está sendo realizado no repositório;
-
-Está atividade pode ser feita com os colegas de classe, mas a entrega é individual;
-
-Sua entrega será para próxima semana até o início da aula e irá fazer parte da nota de AC2.
-
-O exercício e sua entrega é individual;
-
-Utilize o tempo disponibilizado durante as aulas para tirar suas dúvidas e realizar a atividade;
-
-Caso precise de auxílio envie e-mail para daniel.ohata@facens.br.
