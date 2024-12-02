@@ -1,6 +1,5 @@
 GRAFO:
-
-
+IMAGEM ESTÁ EM ISSUES
 
 N1: Início do código
 public class User {
