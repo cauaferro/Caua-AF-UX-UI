@@ -1,3 +1,7 @@
+GRAFO:
+
+
+
 N1: Início do código
 public class User {
     public Connection conectarBD() {
@@ -22,7 +26,6 @@ public boolean verificarUsuario(String login, String senha) {
     Connection conn = conectarBD();
     
 N6: Execução da consulta SQL
-    // INSTRUÇÃO SQL
     sql = "select nome from usuarios ";
     sql += "where login = '" + login + "' ";
     sql += "and senha = '" + senha + "';";
